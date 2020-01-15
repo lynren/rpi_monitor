@@ -1,0 +1,12 @@
+<%
+function get_disk(){
+  var temp;
+  var proc = spawn('sh', ['-c', 'df -h | head -n1']);
+  proc.stdout.on('data', function(data){
+    console.log('running proc');
+    console.log('my data check 1: ' + data);
+    var temp = data;
+  });
+  return temp;
+}
+%>
